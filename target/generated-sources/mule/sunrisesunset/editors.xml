@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/sunrisesunset" prefix="sunrisesunset">
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="Sunrisesunset" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/sunrisesunset/abstractSunrisesunsetConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="Sunrisesunset: Configuration" description="Global Configuration configuration information." icon="icons/theme.classic/sunrisesunset-connector-small.png" localId="config" image="icons/theme.classic/sunrisesunset-connector-large.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/sunrisesunset/parentConfig" connectivityTesting="off" metaData="static" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="Sunrisesunset configuration properties.">
+      <group id="sunrisesunsetGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <string defaultValue="Hello" name="greeting" caption="Greeting" description="Greeting message." supportsExpressions="false" required="false" javaType="java.lang.String"></string>
+        <string defaultValue="How are you?" name="reply" caption="Reply" description="Reply message." supportsExpressions="false" required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractsunrisesunsetconnectorgeneric" description="Interact with Sunrisesunset." icon="icons/theme.classic/sunrisesunset-connector-small.png" localId="abstractSunrisesunsetConnectorGeneric" image="icons/theme.classic/sunrisesunset-connector-large.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractSunrisesunsetConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/sunrisesunset/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.5.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.sunrisesunset" caption="Sunrisesunset" description="" icon="icons/theme.classic/sunrisesunset-connector-small.png" localId="sunrisesunset-connector" image="icons/theme.classic/sunrisesunset-connector-large.png" extends="http://www.mulesoft.org/schema/mule/sunrisesunset/abstractSunrisesunsetConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="sunrisesunsetConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="Sunrisesunset operations to execute" caption="Operation" description="Operation.">
+          <no-operation abstractElement="http://www.mulesoft.org/schema/mule/sunrisesunset/abstractSunrisesunsetConnectorGeneric" versions="[3.5.0,8.0.0]" connector-name="processor"></no-operation>
+          <mode modeId="http://www.mulesoft.org/schema/mule/sunrisesunset/search-on-location" modeLabel="Search on location"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Search On Location" icon="icons/theme.classic/sunrisesunset-connector-small.png" localId="search-on-location" image="icons/theme.classic/sunrisesunset-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/sunrisesunset/abstractSunrisesunsetConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="lat" caption="Lat" description="" required="true" javaType="java.lang.String"></string>
+        <string name="lng" caption="Lng" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>

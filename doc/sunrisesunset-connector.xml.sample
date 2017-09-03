@@ -1,0 +1,3 @@
+<!-- BEGIN_INCLUDE(sunrisesunset:greet) -->
+    <sunrisesunset:greet config-ref="" friend="#[map-payload:friend]" />
+<!-- END_INCLUDE(sunrisesunset:greet) -->
